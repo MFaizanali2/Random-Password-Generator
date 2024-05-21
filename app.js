@@ -1,30 +1,25 @@
 
 let input = document.getElementById("input");
-// let length = 12;
+let put = 12;
+
+let uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+let lowercase = "abcdefghijklmnopqrstuvwxyz";
+let number = "0123456789";
+let symbol = "@#$%^&*()_+}{|\/][~`.,?;:=-";
+let all = uppercase + lowercase + number + symbol;
 
 function Generate(){
-    let uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    let lowercase = "abcdefghijklmnopqrstuvwxyz";
-    let number = "0123456789";
-    let symbol = "@#$%^&*()_+}{|\/][~`.,?;:=-";
-    let all = uppercase + lowercase + number + symbol;
-    
-    let replace = Math.random()*all.length;
-    let round = Math.floor(replace);
-    let some = all[round];
-    
-    let gen = document.querySelector("input");
-    gen.innerText = some;
+    let input = document.getElementById("input");
+    let password = "";
+    password += uppercase[Math.floor(Math.random()*uppercase.length)];
+    password += lowercase[Math.floor(Math.random()*lowercase.length)];
+    password += number[Math.floor(Math.random()*number.length)];
+    password += symbol[Math.floor(Math.random()*symbol.length)];
 
-    // inputbox += Math.floor(Math.random()*uppercase.length);
-    // inputbox += Math.floor(Math.random()*lowercase.length);
-    // inputbox += Math.floor(Math.random()*number.length);
-    // inputbox += Math.floor(Math.random()*symbol.length);
-    // for(){
-    //     inputbox += Math.floor(Math.random()*all.length);
-    // }
-
-    // inputbox += input;
+    for(let i = 1; i <= put; i++){
+    all += symbol[Math.floor(Math.random()*all.length)]; 
+    input.value = password; 
+    }  
 }
 
 function copy(){
@@ -38,3 +33,19 @@ function Clear(){
     let input = document.getElementById("input");
     input.value ="";
 }
+// let replace = Math.random()*all.length;
+// let round = Math.floor(replace);
+// let some = all[round];
+
+// let gen = document.querySelector("input");
+// gen.innerText = console.log(some);
+
+// inputbox += Math.floor(Math.random()*uppercase.length);
+// inputbox += Math.floor(Math.random()*lowercase.length);
+// inputbox += Math.floor(Math.random()*number.length);
+// inputbox += Math.floor(Math.random()*symbol.length);
+// for(){
+//     inputbox += Math.floor(Math.random()*all.length);
+// }
+
+// inputbox += input;

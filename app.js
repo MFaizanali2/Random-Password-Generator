@@ -6,7 +6,7 @@ let uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 let lowercase = "abcdefghijklmnopqrstuvwxyz";
 let number = "0123456789";
 let symbol = "@#$%^&*()_+}{|\/][~`.,?;:=-";
-let all = uppercase + lowercase + number + symbol;
+let all = uppercase + lowercase + number + symbol +1;
 
 function Generate(){
     let input = document.getElementById("input");
@@ -17,7 +17,7 @@ function Generate(){
     password += symbol[Math.floor(Math.random()*symbol.length)];
 
     for(let i = 1; i <= put; i++){
-    all += symbol[Math.floor(Math.random()*all.length)]; 
+    all += all[Math.floor(Math.random()*all.length +2)]; 
     input.value = password; 
     }  
 }

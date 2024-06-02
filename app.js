@@ -1,25 +1,21 @@
 
-let input = document.getElementById("input");
-let put = 12;
-
-let uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-let lowercase = "abcdefghijklmnopqrstuvwxyz";
-let number = "0123456789";
-let symbol = "@#$%^&*()_+}{|\/][~`.,?;:=-";
-let all = uppercase + lowercase + number + symbol +1;
-
+let some = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@#$%^&*()_+}{|\/][~`.,?;:=-";
+let password = "";
 function Generate(){
     let input = document.getElementById("input");
-    let password = "";
-    password += uppercase[Math.floor(Math.random()*uppercase.length)];
-    password += lowercase[Math.floor(Math.random()*lowercase.length)];
-    password += number[Math.floor(Math.random()*number.length)];
-    password += symbol[Math.floor(Math.random()*symbol.length)];
+    password = "";
+    // password += uppercase[Math.floor(Math.random()*uppercase.length)];
+    // password += lowercase[Math.floor(Math.random()*lowercase.length)];
+    // password += number[Math.floor(Math.random()*number.length)];
+    // password += symbol[Math.floor(Math.random()*symbol.length)];
 
-    for(let i = 1; i <= put; i++){
-    all += all[Math.floor(Math.random()*all.length +2)]; 
-    input.value = password; 
+    for(let i = 0; i <= 7; i++){
+    // all += all[Math.floor(Math.random()*all.length +2)]; 
+    // input.value = password; 
+    let random = some[Math.floor(Math.random() * some.length)]
+    password += random;
     }  
+    input.value = password;
 }
 
 function copy(){
